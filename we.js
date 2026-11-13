@@ -56,6 +56,7 @@ function mkMaze(W,H){MZK=W+'x'+H;MZ=[];var el=document.querySelector('#s4 .tx[da
   comp.forEach(function(e){e.t=e.d/mx;e.r=rnd();MZ.push(e);});}
 }
 var DMS=0;
+(function(){function rb(){MZK='';}if(document.fonts&&document.fonts.ready)document.fonts.ready.then(rb);addEventListener('load',function(){rb();setTimeout(rb,600);});addEventListener('orientationchange',rb);})();
 function drawD(p,t){var x=cd.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);var W=cd.clientWidth,H=cd.clientHeight;x.clearRect(0,0,W,H);
  if(MZK!==cd.clientWidth+'x'+cd.clientHeight)mkMaze(cd.clientWidth,cd.clientHeight);var zk=cl((p-.56)/.06,0,1);var reveal=cl((p-.05)/.3,0,1),redp=cl((p-.25)/.3,0,1),link=cl((p-.68)/.3,0,1);
  var rcD=cd.getBoundingClientRect(),mx=MX-rcD.left,my=MY-rcD.top,insD=mx>0&&mx<W&&my>0&&my<H&&reveal>.5,RAD=Math.min(W,H)*.24;DMS+=((insD?1:0)-DMS)*.12;
